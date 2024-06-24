@@ -1,0 +1,22 @@
+.baseTab{
+    cursor: pointer;
+    color: #03151E;
+    border-radius: 20px;
+  }
+  
+  .baseTab:hover{
+    background-color: #03151E !important;
+    color: #fff !important;
+   
+  }
+  
+  .activeTab{
+    background-color: #03151E !important;
+    color: #fff !important;
+    box-shadow: none!important;
+   
+  }
+
+  .cont-nav{
+    width: 100%!important;
+  }
