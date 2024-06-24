@@ -1,0 +1,33 @@
+/*
+package models
+
+import (
+	"database/sql"
+
+	_ "github.com/go-sql-driver/mysql"
+)
+
+var db *sql.DB
+
+func init() {
+	conectionString := "root:Fuerzaabasto1@@tcp(127.0.0.1:3306)/system_books"
+
+	var err error
+
+	db, err = sql.Open("mysql", conectionString)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	err = db.Ping()
+	if err != nil {
+		log.Fatal(err)
+	}
+}
+
+func InsertBook(name string, author string, status bool) error {
+	query := "INSERT INTO books (name, author, status) VALUES (?,?)"
+	_, err := db.Exec(query, name, author, status)
+	return err
+}
+*/
