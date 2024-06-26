@@ -31,3 +31,26 @@ func InsertBook(name string, author string, status bool) error {
 	return err
 }
 */
+
+// Petición bien echa de busqueda por ID
+
+// func getBookByID(w http.ResponseWriter, r *http.Request) {
+// 	params := mux.Vars(r)
+// 	id := params["id"]
+
+// 	var book Books
+
+// 	err := db.QueryRow("SELECT book_id, name, author, status FROM books WHERE book_id = ?", id).Scan(&book.ID, &book.Name, &book.Author, &book.Image, &book.Status)
+
+// 	if err != nil {
+// 		if err == sql.ErrNoRows {
+// 			http.Error(w, "Libro no encontrado", http.StatusNotFound)
+// 		} else {
+// 			http.Error(w, err.Error(), http.StatusInternalServerError)
+// 		}
+// 		return
+// 	}
+
+// 	w.Header().Set("Content-Type", "application/json")
+// 	json.NewEncoder(w).Encode(book)
+// }

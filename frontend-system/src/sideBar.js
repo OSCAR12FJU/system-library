@@ -31,9 +31,9 @@ function Sidebar(){
                         {/*  <!-- Sidebar - Brand --> */}
                         <div className="sidebar-brand d-flex align-items-center justify-content-center">
                             <div className="sidebar-brand-icon rotate-n-15">
-                                <i className="fas fa-laugh-wink"></i>
+                                <i className="fas fa-regular fa-book"></i>
                             </div>
-                            <div className="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                            <div className="sidebar-brand-text mx-2">BS System <sup>2.0</sup></div>
                             <div className="text-center d-none d-md-inline">
                                 <button className="rounded-circle border-0" id="sidebarToggle" onClick={changeStyle}></button>
                             </div>
@@ -54,41 +54,42 @@ function Sidebar(){
 
                         {/* <!-- Nav Item - Dashboard --> */}
                         <li className="nav-item active">
-                            <Link to="http://localhost:3000/Inicio#" className="nav-link">
-                                <i className="fas fa-fw fa-tachometer-alt"></i>
+                            <Link to="http://localhost:3000/Inicio#" className="nav-link" style={{paddingBottom: 0}}>
+                                <i className="fas fa-regular fa-house-user"></i> 
                                 <span>Biblioteca</span>
                             </Link>
                         </li>
-                        {/* <li className="nav-item active">
-                            <a className="nav-link" href="index.html">
-                                <i className="fas fa-fw fa-tachometer-alt"></i>
-                                <span>Dashboard</span></a>
-                        </li> */}
-
+                        <li className="nav-item active">
+                            <Link to="#" className="nav-link" style={{paddingBottom: 0}}>
+                                <i className="fas fa-regular fa-folder-plus"></i>
+                                <span>Añadir Libro</span>
+                            </Link> 
+                        </li>
+                        <li className="nav-item active">
+                            <Link to="#" className="nav-link" style={{paddingBottom: 0}}>
+                                <i className="fas fa-regular fa-calendar-check"></i>
+                                <span>Prestamos</span>
+                            </Link>
+                        </li>
+                        
                         {/*  <!-- Divider --> */}
                         <hr className="sidebar-divider" />
+                        <hr className="sidebar-divider" />
+                        <hr className="sidebar-divider" />
 
-                        {/*   <!-- Heading --> */}
-                        <div className="sidebar-heading">
-                            Interface
-                        </div>
-
-                        {/*Aca elimine un codigo */}
-
-                        {/* <!-- Nav Item - Charts --> */}
-                        <Link to= "/seccion" className="nav-item nav-link">
-
-                           {/* <a className="nav-link" href="charts.html">  */}
-                             <i className="fas fa-fw fa-chart-area"></i>
-                                <span>Charts</span>
-                        </Link>
-
-                        {/*  <!-- Nav Item - Tables --> */}
-                        <li className="nav-item">
-                            <a className="nav-link" href="tables.html">
-                                <i className="fas fa-fw fa-table"></i>
-                                <span>Tables</span></a>
+                        <li className="nav-item active">
+                            <Link to="#" className="nav-link" style={{paddingBottom: 0}}>
+                                <i className="fas fa-regular fa-id-badge"></i> 
+                                <span>Contactanos</span>
+                            </Link>
                         </li>
+                        <li className="nav-item active">
+                            <Link to="#" className="nav-link" style={{paddingBottom: 0}}>
+                                <i className="fas fa-regular fa-door-open"></i>  
+                                <span>Salir</span>
+                            </Link>
+                        </li>
+                    
 
                         {/* <!-- Divider --> */}
                         <hr className="sidebar-divider d-none d-md-block" />

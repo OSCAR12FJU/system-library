@@ -1,50 +1,60 @@
-import React, { useEffect } from "react";
+import React from "react";
 import NavBar from "../components/nav-bar";
 import "../style-pages/login.css"
 // import { Link } from "react-router-dom";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 
 
  function Login(){
 
-    const [formData, setFormData] = useState({
-        email: '',
-        password: '',
-      });
-    
-      const handleChange = (e) => {
-        const { name, value } = e.target;
-        setFormData((prevData) => ({
-          ...prevData,
-          [name]: value,
-        }));
- 
-      };
+    // const [formData, setFormData] = useState({
+    //     email: '',
+    //     password: '',
+    //   });
+    const [userEmail, setUserEmail] = useState('');
+    const [userPassword, setUserPassword] = useState('');
+    const navigate = useNavigate();
+
+      // const handleChange = (e) => {
+      //   const { name, value } = e.target;
+      //   setUserEmail((prevData) => ({
+      //     ...prevData,
+      //     [name]: value,
+      //   }));
+      // };
   
       const handleSubmit = async (e) => {
         e.preventDefault();
         try {
           const response = await fetch('http://localhost:8080/login', {
-            method: 'GET',
+            method: 'POST',
             headers: {
               'Content-Type': 'application/json',
             },
-            body: JSON.stringify(formData),
+            body: JSON.stringify({email:userEmail, password:userPassword}),
           });
+
           if (response.ok) {
-            console.log('Información enviada correctamente');
+            // console.log('Información enviada correctamente');
+            // const user = await response.json();
+            navigate('/Inicio');
           } else {
-            console.error('Problema en el envio de información');
+            // console.error('Problema en el envio de información');
+            alert('Datos ingresados invalidos')
+            console.log(userPassword, userEmail);
           }
         } catch (error) {
           console.error('Error:', error);
         }
-        setFormData({
-          email: '',
-          password: '',
-        })
+        // setFormData({
+        //   email: '',
+        //   password: '', 
+        // })
+        setUserEmail('')
+        setUserPassword('')
       };
+      
     return(
         <>
         <NavBar />
@@ -54,10 +64,13 @@ import { Link } from "react-router-dom";
                      <h2 className="h3 mb-0">Iniciar Sesion</h2>
                 </div>
                 <div className="mb-3">
-                    <input type="email" className="form-control" placeholder="E-mail" id="exampleInputEmail1 " aria-describedby="emailHelp" name="email" onChange={handleChange} value={formData.email} />
+                    <input type="email" className="form-control" placeholder="E-mail" id="exampleInputEmail1 " aria-describedby="emailHelp" name="email" value={userEmail} onChange={(e) => setUserEmail(e.target.value)} required/>
+                    {/* <input type="email" className="form-control" placeholder="E-mail" id="exampleInputEmail1 "  aria-describedby="emailHelp" name="email" onChange={handleChange} value={formData.email} /> */}
+
                 </div>
                 <div className="mb-3">
-                    <input type="password" className="form-control"placeholder="Contraseña" id="exampleInputPassword1" name="password" onChange={handleChange} value={formData.password} />
+                    {/* <input type="password" className="form-control"placeholder="Contraseña" id="exampleInputPassword1" name="password" onChange={handleChange} value={formData.password} /> */}
+                    <input type="password" className="form-control" placeholder="Contraseña" id="exampleInputPassword1 " name="password" value={userPassword} onChange={(e) => setUserPassword(e.target.value)} required/>
                 </div>
                 <div className="mb-3 form-check">
                     <input type="checkbox" className="form-check-input" id="exampleCheck1" />

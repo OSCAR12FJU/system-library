@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Dashboard.css';
 import Sidebar from './sideBar';
 import CardBooks from './forms/components/card-books';
+import { Link } from 'react-router-dom';
 
 function Dashboard() {
 
@@ -153,8 +154,7 @@ function Dashboard() {
                                         name={book.name}
                                         author={book.author}    
                                         image={book.image}
-                                        />
-
+                                        />                                        
                                     ))}
                          
                                 </div>
